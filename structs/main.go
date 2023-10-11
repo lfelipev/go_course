@@ -23,8 +23,15 @@ func main() {
 		},
 	}
 
-	jimPointer := &jim
-	jimPointer.updateName("jimmy")
+	jim.package main
+ 
+	import "fmt"
+	 
+	func main() {
+		name := "Bill"
+	 
+		fmt.Println(*&name)
+	}updateName("jimmy")
 	jim.print()
 }
 
