@@ -6,6 +6,9 @@ import (
 	"os"
 )
 
+//go build main.go
+//main.exe main.go
+
 func main() {
 	f_name := os.Args[1]
 
