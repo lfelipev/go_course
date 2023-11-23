@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"net/http"
 	"os"
 )
@@ -16,9 +15,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	lw := logWriter{}
+	//lw := logWriter{}
+	//io.Copy(lw, resp.Body)
 
-	io.Copy(lw, resp.Body)
+	bs := make([]byte, 99999)
+	resp.Body.Read(bs)
+	fmt.Println(string(bs))
 }
 
 func (logWriter) Write(bs []byte) (int, error) {
